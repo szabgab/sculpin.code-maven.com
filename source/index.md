@@ -20,3 +20,5 @@ layout: default
 
 * [Building static websites with Sculpin](https://php.code-maven.com/building-static-websites-with-sculpin)
 
+* The [source](https://github.com/szabgab/sculpin.code-maven.com/) of this web site
+* The [GitHub Actions workflow](https://github.com/szabgab/sculpin.code-maven.com/blob/main/.github/workflows/ci.yml) that is used to build this site.
