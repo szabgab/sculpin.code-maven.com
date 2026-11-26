@@ -23,23 +23,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: szabgab/php:latest
+      image: php:8.2-cli
     steps:
       - name: Checkout site source
         uses: actions/checkout@v7
 
-      - name: Install sculpin
-        run: /home/ubuntu/bin/composer.phar require sculpin/sculpin
+      - name: Install packages
+        run: apt install -y unzip
 
-      - name: Find sculpin
-        run: find / | grep /sculpin
+      - name: Install composer
+        run: |
+          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+          php -r "if (hash_file('sha384', 'composer-setup.php') === 'c8b085408188070d5f52bcfe4ecfbee5f727afa458b2573b8eaaf77b3419b0bf2768dc67c86944da1544f06fa544fd47') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+          php composer-setup.php
+          php -r "unlink('composer-setup.php');"
+ 
+      #- name: Install sculpin
+      #  run: /home/ubuntu/bin/composer.phar require sculpin/sculpin
 
-      - name: Build site
-        run: /github/home/.composer/cache/files/sculpin/sculpin  --output-dir=_site
-        #run: /opt/vendor/bin/sculpin generate --output-dir=_site
+      #- name: Find sculpin
+      #  run: find / | grep /sculpin
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+      #- name: Build site
+      #  run: /github/home/.composer/cache/files/sculpin/sculpin  --output-dir=_site
+      #  #run: /opt/vendor/bin/sculpin generate --output-dir=_site
+
+      #- name: Upload artifact
+      #  uses: actions/upload-pages-artifact@v5
 
   # Deployment job
   deploy:
