@@ -32,7 +32,7 @@ jobs:
         run: /home/ubuntu/bin/composer.phar require sculpin/sculpin
 
       - name: Build site
-        run: sculpin generate --output-dir=_site
+        run: /opt/vendor/bin/sculpin generate --output-dir=_site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
