@@ -42,7 +42,7 @@ jobs:
           php -r "unlink('composer-setup.php');"
 
       - name: Install sculpin
-        run: /home/ubuntu/bin/composer.phar require sculpin/sculpin
+        run: ./composer.phar require sculpin/sculpin
 
       - name: Find sculpin
         run: find / | grep /sculpin
