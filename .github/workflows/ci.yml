@@ -44,12 +44,8 @@ jobs:
       - name: Install sculpin
         run: ./composer.phar -vvv require sculpin/sculpin
 
-#      - name: Find sculpin
-#        run: find / | grep /sculpin
-
       - name: Build site
         run: ./vendor/bin/sculpin  generate --output-dir=_site
-        #run: /opt/vendor/bin/sculpin generate --output-dir=_site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
