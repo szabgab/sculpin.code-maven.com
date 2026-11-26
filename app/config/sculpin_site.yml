@@ -1,0 +1,5 @@
+title: "My Sculpin Site"
+subtitle: "A Static Site Powered By Sculpin"
+google_analytics_tracking_id: ''
+url: ''
+output_dir: 'docs'
