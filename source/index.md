@@ -10,7 +10,7 @@ layout: default
 
 <hr>
 
-<iframe src="https://www.youtube.com/embed/-UJef7EXOiY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1120" src="https://www.youtube.com/embed/-UJef7EXOiY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 
