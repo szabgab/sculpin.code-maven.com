@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install sculpin
-        run: composer.phar require sculpin/sculpin
+        run: /home/ubuntu/bin/composer.phar require sculpin/sculpin
 
       - name: Build site
         run: sculpin generate --output-dir=_site
